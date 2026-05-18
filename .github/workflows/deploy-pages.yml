@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'docs/**'
   workflow_dispatch:
 
 permissions:
@@ -28,10 +26,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Upload docs folder as Pages artifact
+      - name: Upload site as Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/
+          path: ./
 
       - name: Deploy to GitHub Pages
         id: deployment
